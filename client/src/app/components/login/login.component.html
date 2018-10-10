@@ -1,0 +1,73 @@
+<section class="container-fluid loginback">
+  <br>
+  <br>
+  <div class="row">
+
+<!-- Caja de login -->
+  <div class="container cam">
+    <div>
+      <img src="../assets/img/logogai.png" class="img-fluid" alt="Responsive image" width="60%">
+    </div>
+    <br>
+    <div>
+      <h2 class="ne">{{title}}</h2>
+      <p>{{ualx}}</p>
+    </div>
+
+      <div class="alert alert-success col-md-12" *ngIf="status == 'success'">
+        Te has identificado correctamente, bienvenido! <a [routerLink]="['/home']">Puedes acceder a Home aquí</a>
+      </div>
+
+      <div class="alert alert-danger col-md-12" *ngIf="status == 'error'">
+        No te has identificado
+      </div>
+
+    <div>
+      
+      <form #loginForm="ngForm" (ngSubmit)="onSubmit()" class="row">
+      <div class="col-md-12 col-lg-12">
+          <div class="form-label-group">
+            <input type="email" name="correo" #correo="ngModel" [(ngModel)]="user.correo" id="inputEmail" class="form-control" placeholder="Email address" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+" autofocus>
+            <label for="inputEmail">Correo electrónico</label>
+            <span *ngIf="!correo.valid && correo.touched">
+      				Esta dirección no es correcta
+      			</span> 
+          </div>
+
+          <div class="form-label-group">
+            <input type="password" name="contrasena" #contrasena="ngModel" [(ngModel)]="user.contrasena" id="inputPassword" class="form-control" placeholder="Password" required>
+            <label for="inputPassword">Contraseña</label>
+            <span *ngIf="!contrasena.valid && contrasena.touched">
+      				Debes ingresar tu contraseña
+      			</span> 
+          </div>
+      </div>
+
+      <div class="col-md-12 col-lg-12"> 
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Recordar datos
+          </label>
+        </div>
+       <input type="submit" value="Iniciar sesión" class="mt-2 bth btn btn-md btn-info"  [disabled]="!loginForm.form.valid">
+      </div>
+
+    </form>
+
+    </div>
+  </div>
+
+  <!-- Pie de pagina -->
+  <div class="pie text-right" *ngIf="!identity">
+    <div class="container-fluid">
+        <span>©2018 IE Jesus Rey</span>
+        <a href="#" class="thr text-light">Acerca de</a>
+    </div>
+  </div>
+
+</div>
+</section>
+
+
+
+

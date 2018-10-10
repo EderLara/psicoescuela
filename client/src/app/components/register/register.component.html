@@ -1,0 +1,141 @@
+<section class="container-fluid registerback">
+	<br>
+	<br>
+	<div class="row">
+		
+		<!-- Caja de registro -->
+		  <div class="container cama">
+		    <div>
+		      <img src="../assets/img/logogai.png" class="img-fluid" alt="Responsive image" width="50%">
+		    </div>
+		    <br>
+		    <div>
+		    	<form method="post" #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+		    		<div>
+		    			<h2 class="nu">{{title}}</h2>
+		    			<p>{{aska}}</p>
+		    		</div>
+					<hr>
+
+					<div class="alert alert-success" *ngIf="status == 'success'">
+						Registro completado correctamente, <a [routerLink]="['/login']">Puedes iniciar sesión aquí</a>
+					</div>
+
+					<div class="alert alert-danger" *ngIf="status == 'error'">
+						Ha ocurrido un error en el registro
+					</div>
+		    		<div class="row">
+		                <div class="col-lg-6">
+		                    <label>Nombres:</label>
+		                    <input type="text" name="nombres" #nombres="ngModel" [(ngModel)]="user.nombres" placeholder="Ingresa tu nombre" class="form-control" required>
+		                    <span *ngIf="!nombres.valid && nombres.touched">
+								Debes ingresar tu nombre
+						    </span>
+		                </div>
+
+		            <div class="col-lg-6">
+		                <label>Apellidos:</label>
+		                <input type="text" name="apellidos" #apellidos="ngModel" [(ngModel)]="user.apellidos" class="form-control" placeholder="Ingresa tus apellidos" required>
+		            	 <span *ngIf="!apellidos.valid && apellidos.touched">
+								Debes ingresar tu apellido
+						  </span> 
+		            </div>
+
+		            </div>
+		            <br>
+		            <div class="col-lg-12">
+			            <label >Correo:</label>
+			            <input type="email" name="correo" #correo="ngModel" [(ngModel)]="user.correo" class="form-control" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Invalid email address" placeholder="ashstyx@example.com" required>
+				        <span *ngIf="!correo.valid && correo.touched">
+								Esta dirección no es correcta
+						</span> 
+			        </div>
+
+		            <br>
+		            <div class="col-lg-12">
+		                    <label>Contraseña: </label>
+		                    <input type="password" name="contrasena" #contrasena="ngModel" [(ngModel)]="user.contrasena" class="form-control" placeholder="Ingresa tu contraseña" required/>
+		    
+		            </div>
+		            <br>
+		            <label>Genero</label>
+		            <select class="form-control">
+		                <option value="">Escoger genero</option>
+		                <option value="">Masculino</option>
+		                <option value="">Femenino</option>
+		                <option value="">Otro</option>
+		            </select>
+		            <br>
+
+		            <div class="prro col-md-12 col-lg-12">
+		                <input type="submit" name="submit" value="Registrarse" class="bth btn btn-md btn-info " [disabled]="!registerForm.form.valid">
+		            </div>
+
+		    	</form>
+		    </div>
+
+		  </div>
+
+		<!-- Pie de pagina -->
+		<div class="pie text-right" *ngIf="!identity">
+		  <div class="container-fluid">
+		      <span>©2018 IE Jesus Rey</span>
+		      <a href="#" class="thr text-light">Acerca de</a>
+		  </div>
+		</div>    
+
+
+	</div>
+</section>
+<!-- 
+	<div class="col-lg-6">
+	<h2>{{title}}</h2>
+
+	
+
+	<form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)" class="col-lg-10">
+		<p>
+			<label>Nombres</label>
+			<input type="text" name="nombres" #nombres="ngModel" [(ngModel)]="user.nombres" class="form-control" required />
+			<span *ngIf="!nombres.valid && nombres.touched">
+				Debes ingresar tu nombre
+			</span>
+		</p>
+
+		<p>
+			<label>Apellidos</label>
+			<input type="text" name="apellidos" #apellidos="ngModel" [(ngModel)]="user.apellidos" class="form-control" required />
+			<span *ngIf="!apellidos.valid && apellidos.touched">
+				Debes ingresar tu apellido
+			</span>
+		</p>
+
+		<p>
+			<label>Nick</label> 
+			<input type="text" name="nick" #nick="ngModel" [(ngModel)]="user.nick" class="form-control" required />
+			<span *ngIf="!nick.valid && nick.touched">
+				Debes ingresar tu apodo
+			</span>
+		</p>
+
+		<p>
+			<label>Correo electrónico</label>
+			<input type="email" name="correo" #correo="ngModel" [(ngModel)]="user.correo" class="form-control" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Invalid email address" />
+			<span *ngIf="!correo.valid && correo.touched">
+				Esta dirección no es correcta
+			</span>
+		</p>
+		
+		<p>
+			<label>Contraseña</label>
+			<input type="password" name="contrasena" #contrasena="ngModel" [(ngModel)]="user.contrasena" class="form-control" required />
+			<span *ngIf="!contrasena.valid && contrasena.touched">
+				Debes ingresar tu contraseña
+			</span>
+		</p>
+		
+		<input type="submit" name="" value="{{title}}" class="btn btn-md btn-info" [disabled]="!registerForm.form.valid" />
+	</form>
+</div>
+
+-->
