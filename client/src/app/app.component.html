@@ -16,21 +16,23 @@
                 <!-- Imagen de usuario -->
           </li>
           <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{identity.nombres}} <span class="caret"></span></a>
-          </li>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">identity.nombres</a>
 
-          <ul class="dropdown-menu">
+                <ul class="dropdown-menu">
                 <li>
-                      <a href="#">
+                      <a class="dropdown-item" href="#">
                       <span class="glyphicon glyphicon-user"></span>  
                       Mi perfil</a>
                 </li>
                 <li>
-                      <a href="#">
+                      <a class="dropdown-item" (click)="logout()">
                       <span class="glyphicon glyphicon-log-out"></span>  
                       Cerrar sesión</a>
                 </li>
           </ul>
+          </li>
+
+          
     </ul>
   </div>
 </nav>

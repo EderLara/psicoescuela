@@ -49,7 +49,7 @@
             <input type="checkbox" value="remember-me"> Recordar datos
           </label>
         </div>
-       <input type="submit" value="Iniciar sesión" class="mt-2 bth btn btn-md btn-info"  [disabled]="!loginForm.form.valid">
+       <input type="submit" value="Iniciar sesión" class="mt-2 bth btn btn-md btn-info" [disabled]="!loginForm.form.valid">
       </div>
 
     </form>
@@ -58,7 +58,7 @@
   </div>
 
   <!-- Pie de pagina -->
-  <div class="pie text-right" *ngIf="!identity">
+  <div class="pie text-right">
     <div class="container-fluid">
         <span>©2018 IE Jesus Rey</span>
         <a href="#" class="thr text-light">Acerca de</a>
