@@ -1,36 +1,16 @@
-<!-- Barra de navegación -->
-<div>
-    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IncorpuEdu</a>
-
-      <ul class="navbar-nav px-3">
-      	<li class="nav-item text-nowrap avatar">
-      		 Cargar imagen de usuario 
-      	</li>
-      	<li class="dropdown">
-      		<a class="nav-item text-nowrap dropdown-toggle" data-toggle="dropdown" href="#">
-      			{{identity.nombres}}
-      		</a>
-
-      		<ul class="dropdown-menu">
-      			<li>
-      				<a href="#">
-      					Mi perfil
-      				</a>
-      			</li>
-      			<li>
-      				<a href="#">
-      					Datos
-      				</a>
-      			</li>
-      			<li>
-      				<a href="#" (click)="logout()">Cerrar sesión</a>
-      			</li>
-      		</ul>
-      	</li>
-      </ul>
-    </nav>
-</div>
+<nav class="navbar navigation navbar-expand-lg navbar-dark bg-light" style="background: #CB6120 !important;">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link hover-efect" [routerLink]="['/home']" [routerLinkActive]="['active']">Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
 <!-- La etiqueta intocable -->
 <router-outlet></router-outlet>
