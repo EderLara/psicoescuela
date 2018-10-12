@@ -252,3 +252,7 @@ body {
   text-align: center;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
